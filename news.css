@@ -1,0 +1,150 @@
+/* News Carousel Styles */
+.news-carousel {
+    position: relative;
+    background-color: #000; /* Black background for letterboxing */
+    padding: 0;
+    overflow: hidden;
+}
+
+.news-carousel .carousel-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Enforce 16:9 aspect ratio */
+    margin: auto; /* Center the wrapper */
+}
+
+.news-carousel .slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%; /* Slide fills the wrapper */
+    width: 100%;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    background-size: cover; /* Cover the area without stretching */
+    background-position: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Overlay for the background image */
+.news-carousel .slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+}
+
+/* Style for slides without a background image */
+.news-carousel .slide.no-image {
+    background: linear-gradient(45deg, var(--primary-blue), #2c3e50); /* Gradient background */
+}
+
+.news-carousel .slide.no-image::before {
+    background-color: rgba(0, 0, 0, 0.2); /* Lighter overlay for gradient */
+}
+
+.news-carousel .slide .news-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px; /* Constrain content width for readability */
+    padding: 40px; /* Add padding to the content container instead */
+}
+
+/* Hide the old image container if it still exists in HTML for some reason */
+.news-carousel .slide .news-image {
+    display: none;
+}
+
+.news-carousel .slide h3 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.news-carousel .slide .news-date {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+}
+
+.news-carousel .slide p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.news-carousel .btn-read-more {
+    display: inline-block;
+    background-color: var(--accent-gold);
+    color: var(--primary-blue);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    border: 2px solid var(--accent-gold);
+}
+
+.news-carousel .btn-read-more:hover {
+    background-color: transparent;
+    color: var(--accent-gold);
+}
+
+/* Reposition nav buttons for the news carousel on desktop */
+.news-carousel .carousel-nav {
+    z-index: 3; /* Ensure buttons are on top */
+}
+
+.news-carousel .carousel-nav.prev {
+    left: 20px;
+}
+
+.news-carousel .carousel-nav.next {
+    right: 20px;
+}
+
+.news-carousel .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    gap: 10px;
+}
+
+.news-carousel .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.news-carousel .dot.active {
+    background: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+    .news-carousel .slide .news-content {
+        padding: 30px;
+    }
+
+    .news-carousel .slide h3 {
+        font-size: 2rem;
+    }
+
+    .news-carousel .slide p {
+        font-size: 1.1rem;
+    }
+}
