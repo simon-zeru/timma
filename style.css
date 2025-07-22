@@ -52,12 +52,8 @@ body {
 /* Carousel Styles */
 .carousel-container {
   position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background: white;
-  box-shadow: 0 20px 40px var(--shadow-light);
-  padding: 40px 50px 60px 50px; /* Increased side padding and bottom padding */
-  max-width: calc(100vw - 100px); /* Prevent container from being too wide */
+  /* The container is now transparent, letting the cards "float" on the page background */
+  padding: 40px 0; /* Adjusted padding for the new look */
 }
 
 .carousel-wrapper {
