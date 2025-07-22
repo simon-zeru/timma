@@ -25,7 +25,7 @@
     box-sizing: border-box;
     background-size: cover; /* Cover the area without stretching */
     background-position: center;
-    color: #fff;
+    color: #fff !important;
     overflow: hidden;
 }
 
