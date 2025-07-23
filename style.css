@@ -59,6 +59,10 @@ body {
 .carousel-wrapper {
   position: relative;
   height: 500px;
+  max-width: 1050px; /* Limit width to ~3 cards */
+  margin: 0 auto; /* Center the carousel */
+  overflow: hidden; /* Hide overflowing cards */
+  border-radius: 20px; /* To clip the cards with a radius */
 }
 
 .carousel-track {
@@ -87,7 +91,6 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-8px);
   box-shadow: 
     0 20px 40px var(--shadow-medium),
     0 8px 16px var(--shadow-light);
@@ -180,11 +183,11 @@ body {
 }
 
 .carousel-nav.prev {
-  left: -40px; /* Increased margin from -25px */
+  left: 20px;
 }
 
 .carousel-nav.next {
-  right: -40px; /* Increased margin from -25px */
+  right: 20px;
 }
 
 /* Dots Indicator */
