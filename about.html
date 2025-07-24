@@ -191,10 +191,11 @@
             <h3>Iphiyenia Tournavitou</h3>
             <p>Associate professor, University of Thessaly, Greece</p>
           </div>
-        </div>        <button class="carousel-nav prev" id="prevBtn">‹</button>
+        </div> 
+        <button class="carousel-nav prev" id="prevBtn">‹</button>
         <button class="carousel-nav next" id="nextBtn">›</button>
       </div>
-      
+
       <div class="carousel-dots" id="carouselDots"></div>
     </div>
   </div>
@@ -225,7 +226,7 @@
         if (this.isMobile()) {
           this.cardsPerView = 1;
           // On mobile, each card takes the full width of the wrapper
-          this.cardWidth = this.track.parentElement.offsetWidth; 
+          this.cardWidth = this.track.parentElement.offsetWidth;
           this.totalSlides = this.cards.length; // Each card is a slide
         } else {
           const desktopCardWidth = 330; // 300px card + 30px margin
@@ -236,11 +237,11 @@
         }
 
         // After calculating metrics, update the view
-        this.updateCarousel(); 
-        
+        this.updateCarousel();
+
         // Re-enable transitions after a short delay
         setTimeout(() => {
-            this.track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+          this.track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
         }, 50);
       }
 
@@ -270,14 +271,14 @@
 
       bindEvents() {
         this.prevBtn.addEventListener('click', () => {
-            this.pauseAutoPlay();
-            this.prevSlide();
-            this.startAutoPlay(); // Restart autoplay after manual navigation
+          this.pauseAutoPlay();
+          this.prevSlide();
+          this.startAutoPlay(); // Restart autoplay after manual navigation
         });
         this.nextBtn.addEventListener('click', () => {
-            this.pauseAutoPlay();
-            this.nextSlide();
-            this.startAutoPlay(); // Restart autoplay after manual navigation
+          this.pauseAutoPlay();
+          this.nextSlide();
+          this.startAutoPlay(); // Restart autoplay after manual navigation
         });
 
         // Touch/swipe support
@@ -308,22 +309,22 @@
       updateCarousel() {
         const translateX = -this.currentIndex * this.cardWidth;
         this.track.style.transform = `translateX(${translateX}px)`;
-        
+
         document.querySelectorAll('.dot').forEach((dot, index) => {
           dot.classList.toggle('active', index === this.currentIndex);
         });
-        
+
         const hasEnoughCards = this.cards.length > this.cardsPerView;
         this.prevBtn.style.display = hasEnoughCards ? 'flex' : 'none';
         this.nextBtn.style.display = hasEnoughCards ? 'flex' : 'none';
-        
+
         // On desktop, disable buttons at the ends if not looping
         if (!this.isMobile() && hasEnoughCards) {
-            // This logic assumes non-looping on desktop. For looping, remove this.
-            this.prevBtn.disabled = this.currentIndex === 0;
-            this.nextBtn.disabled = this.currentIndex >= this.totalSlides - 1;
-            this.prevBtn.style.opacity = this.prevBtn.disabled ? '0.5' : '1';
-            this.nextBtn.style.opacity = this.nextBtn.disabled ? '0.5' : '1';
+          // This logic assumes non-looping on desktop. For looping, remove this.
+          this.prevBtn.disabled = this.currentIndex === 0;
+          this.nextBtn.disabled = this.currentIndex >= this.totalSlides - 1;
+          this.prevBtn.style.opacity = this.prevBtn.disabled ? '0.5' : '1';
+          this.nextBtn.style.opacity = this.nextBtn.disabled ? '0.5' : '1';
         }
       }
 

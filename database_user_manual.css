@@ -1,0 +1,78 @@
+body {
+  margin-left: 260px;
+}
+#sommaire {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  border-right: none;
+  box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+  padding: 32px 18px 18px 32px;
+  overflow-y: auto;
+  z-index: 1000;
+  border-radius: 0 16px 16px 0;
+  font-family: 'Segoe UI', 'Century Gothic', Arial, sans-serif;
+}
+#sommaire h2 {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+  color: #007bff;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+#sommaire ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#sommaire li {
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+#sommaire a {
+  text-decoration: none;
+  color: #222;
+  padding: 7px 14px;
+  border-radius: 6px;
+  display: block;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: none;
+}
+#sommaire a:hover {
+  background: #e9f3ff;
+  color: #007bff;
+  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+}
+#sommaire a.active {
+  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 2px 12px rgba(0,123,255,0.12);
+}
+#sommaire li h3 {
+  font-size: 1em;
+  font-weight: 600;
+  margin: 0;
+  color: #0056b3;
+}
+@media (max-width: 800px) {
+  #sommaire {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  body {
+    margin-left: 0;
+  }
+}

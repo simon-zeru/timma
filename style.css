@@ -161,8 +161,8 @@ body {
   transform: translateY(-50%);
   background: white;
   border: none;
-  width: 60px; /* Increased from 50px */
-  height: 60px; /* Increased from 50px */
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -172,7 +172,7 @@ body {
   transition: all 0.3s ease;
   z-index: 10;
   color: var(--primary-blue);
-  font-size: 24px; /* Increased from 20px */
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -183,7 +183,7 @@ body {
 }
 
 .carousel-nav.prev {
-  left: 20px;
+  left: 20px
 }
 
 .carousel-nav.next {
