@@ -899,7 +899,7 @@
           // Décalage pour navbar sur grand écran
           setTimeout(function() {
             if (window.innerWidth > 800) {
-              const offset = 140; // hauteur de la navbar ou marge souhaitée (encore plus grand)
+              const offset = 150; // hauteur de la navbar ou marge souhaitée (encore plus grand)
               const rect = target.getBoundingClientRect();
               window.scrollBy({top: rect.top - offset, left: 0, behavior: 'instant'});
             }
