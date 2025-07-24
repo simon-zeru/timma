@@ -1,12 +1,13 @@
 #sommaire {
   position: fixed;
-  top: 0;
+  top: 48px; /* marge pour navbar, ajustable */
   left: 0;
   width: 260px;
-  height: 100vh;
-  background: #fff;
-  border-right: none;
-  box-shadow: 2px 0 16px rgba(0,0,0,0.08);
+  height: calc(100vh - 48px);
+  background: none;
+  border-right: 1px solid #e0e0e0;
+  border-left: none;
+  box-shadow: none;
   padding: 32px 18px 18px 32px;
   overflow-y: auto;
   z-index: 1000;
@@ -41,15 +42,15 @@
   box-shadow: none;
 }
 #sommaire a:hover {
-  background: #e9f3ff;
-  color: #007bff;
-  box-shadow: 0 2px 8px rgba(0,123,255,0.08);
+  background: #60AB9D;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(96,171,157,0.12);
 }
 #sommaire a.active {
-  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+  background: #60AB9D;
   color: #fff;
   font-weight: bold;
-  box-shadow: 0 2px 12px rgba(0,123,255,0.12);
+  box-shadow: 0 2px 12px rgba(96,171,157,0.18);
 }
 #sommaire li h3 {
   font-size: 1em;
@@ -63,7 +64,7 @@
     width: 100%;
     height: auto;
     border-right: none;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e0e0e0;
     margin-bottom: 16px;
     padding: 16px;
     border-radius: 0;
