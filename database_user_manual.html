@@ -894,7 +894,16 @@
         a.dataset.level = header.tagName;
         a.onclick = function(e) {
           e.preventDefault();
-          document.getElementById(header.id).scrollIntoView({behavior: 'smooth', block: 'start'});
+          const target = document.getElementById(header.id);
+          target.scrollIntoView({behavior: 'smooth', block: 'start'});
+          // Décalage pour navbar sur grand écran
+          setTimeout(function() {
+            if (window.innerWidth > 800) {
+              const offset = 56; // hauteur de la navbar ou marge souhaitée
+              const rect = target.getBoundingClientRect();
+              window.scrollBy({top: rect.top - offset, left: 0, behavior: 'instant'});
+            }
+          }, 300);
           let highlightId = header.id;
           if (header.tagName === 'H3') {
             // Trouver le parent h2 le plus proche au-dessus
